@@ -1,0 +1,373 @@
+/* Configurações Globais */
+:root {
+    --primary-color: #2563eb;
+    --text-color: #1f2937;
+    --bg-color: #fcfcfc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza todo o conteúdo da página */
+}
+
+body.dark-theme {
+    background-color: #111827;
+    --text-color: #f9fafb;
+    --primary-color: #60a5fa;
+}
+
+body.dark-theme header {
+    background-color: #1f2937;
+    border-bottom: 1px solid #374151;
+}
+
+body.dark-theme .curso-card {
+    background-color: #1f2937;
+    border: 1px solid #374151;
+}
+
+body.dark-theme .curso-card p, 
+body.dark-theme .bio {
+    color: #d1d5db;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px; 
+    padding: 20px;
+    margin: 0 auto; /* Garante que o container fique no meio da tela */
+}
+
+/* Header e Nav */
+header {
+    background-color: #f2f4f6;
+    width: 100%;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo do cabeçalho */
+}
+
+h1 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    margin-right: 20px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Seção Perfil */
+.perfil {
+    margin-top: 30px;
+}
+
+.foto-perfil {
+    width: 250px;
+    height: 250px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #f2f4f6;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.perfil-info {
+     margin: 20px 0;
+    text-align: justify;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+li, ul {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    width: 100%;
+
+}
+
+.bio {
+    max-width: 600px;
+    font-size: 1.1rem;
+    color: #4b5563;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #e5e7eb;
+    margin: 40px 0;
+    width: 100%;
+}
+
+/* Cursos Grid (Sombras Separadas) */
+.grid-cursos {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Espaço entre os cards */
+    margin-top: 20px;
+}
+
+.curso-card {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    gap: 15px;
+    width: 100%;
+    /* Sombra individual em cada card */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f3f4f6;
+}
+
+.curso-card:hover {
+    transform: translateY(-5px); /* Efeito de flutuar */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12); /* Sombra aumenta ao passar o mouse */
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.curso-detalhes h3 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 4px;
+}
+
+.curso-detalhes p {
+    font-size: 0.95rem;
+    color: #4b5563;
+    margin-bottom: 5px;
+}
+
+.curso-detalhes small {
+    color: #9ca3af;
+    font-weight: 600;
+}
+
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #9ca3af;
+    text-align: center;
+}
+
+/*projetos*/
+
+section.portifolio {
+    padding: 80px 4%; /* 80px em cima e embaixo e 4% nas laterais de espaço */
+box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    border-radius: 30px;
+}
+
+/* Aplicação do Flexbox para alinhar lado a lado */
+section.portifolio .flex {
+    display: flex;
+    flex-direction: column; /* Essa é a mágica que coloca em coluna */
+    align-items: center; /* Garante que todos fiquem centralizados no meio da tela */
+    gap: 40px; /* Aumentei um pouco o gap para dar um respiro legal entre um projeto e outro */
+    margin: 60px 0;
+}
+
+/* Rolagem infinita */
+@keyframes rolarBackgroundLoop {
+    from {
+        background-position: 100% 0%; /* Começa no topo */
+    }
+    to {
+        background-position: 100% 100%; /* Vai até o final */
+    }
+}
+
+.portifolio-item {
+    width: 360px;
+    max-width: 100%;
+    height: 460px;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.img-port {
+    width: 360px;
+    max-width: 100%;
+    height: 460px;
+    background-size: cover; /* tamanho do background, cover ajuda no tamanho */
+    background-position: 100% 0%; /* Posição inicial fixa */
+    transition: background-position 5s ease-in-out;
+    border-radius: 40px;
+    /*cursor: pointer;*/
+    position: relative; /* tem que usar se não o overlay não funciona */
+    overflow: hidden;
+}
+
+.img-port:hover {
+    /* Aciona a animação de loop quando passa o mouse */
+    background-position: 100% 100%;
+}
+
+.img-port.horizontal {
+    background-size: auto 100%;
+    background-position: 100%;
+}
+
+.img-port.horizontal:hover {
+    background-position: 0% center; /* Vai da direita para a esquerda ao passar o mouse */
+}
+
+/* conteiner das imagens */
+
+.img-galeria, .galeria-img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+
+}
+
+.img-galeria img, .galeria-img img{
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 1);
+}
+
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2564eb1c;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    font-weight: 600; /* deixar a fonte mais pesada */
+    color: white;
+    opacity: 0;
+    transition: .3s;
+}
+
+.overlay:hover {
+    opacity: 1;
+}
+
+.video-port{
+    overflow: hidden;
+    background-color: #1f2937;
+    position: relative; /* Garante que o vídeo fique contido aqui dentro */
+    border-radius: 40px;
+}
+
+.video-port video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%; /* Mantido em 100% para não vazar a caixa verticalmente */
+    width: 260%; /* A largura que você definiu criando a "sobra" */
+    object-fit: cover;
+    pointer-events: none;
+    transform: translateX(-61.5%); /* Inicia escondendo a sobra da esquerda (mostra a direita) */
+    transition: transform 4s ease-in-out; /* Adicionado para a animação de ida e volta funcionar */
+}
+
+.video-port:hover video {
+    transform: translateX(0%); /* Arrasta o vídeo de volta para a esquerda */
+}
+
+/* Formulario */
+
+section.formulario {
+    padding: 80px 4%;
+
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column; /* os elementos ficam em coluna*/
+    gap: 10px; /* espacamento*/
+    margin-top: 40px;
+}
+
+form input, form textarea{
+    width: 500px;
+    background-color: rgb(233, 233, 233);
+    border: 0;
+    outline: 0;
+    padding: 20px 15px;
+    border-radius: 20px;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+}
+
+form input::placeholder{
+    color: #2563eb;
+}
+
+form textarea{
+    resize: none; /* usar o none para nao poder mexer na caixa de mensagem*/
+    max-height: 200px;
+}
+
+form .btn-enviar{
+    margin-top: 20px;
+
+}
+
+form .btn-enviar input{ /*[type=submit] SO USA ISSO QUANDO QUISER TRABALAHR COM UM TIPO ESPECIFICO DE INPUT */
+    width: 120px;
+    text-align: center;
+    background-color: #2563eb;
+    color: black;
+    cursor: pointer;
+    font-weight: 700;
+    transition: .2s;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
